@@ -1,8 +1,13 @@
-documents
-<div >
-
-    <table ng-table="tableParams" class="table">
+<div>
+    <table class="table">
+        <tr>
+            <th><i class="fa fa-bars"></i></th>
+            <th>Name <i class="fa fa-angle-up"></i></th>
+            <th>Kunde <i class="fa fa-angle-up"></i></th>
+            <th>Datum <i class="fa fa-angle-up"></i></th>
+        </tr>
         <tr ng-repeat="invoice in invoices">
+            <td><i class="fa fa-plus"></i></td>
             <td data-title="'Name'" sortable="'name'">
                 {{invoice.name}}
             </td>
