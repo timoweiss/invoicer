@@ -23,11 +23,17 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-
+      <div class="row">
+        <div class="col-md-12"><div ng-include src="'views/header.html'"></div></div>
       </div>
 
-        <div ng-view=""></div>
+      <div class="row">
+        <div class="col-md-4"><div ng-include src="'views/sidebar.html'"></div></div>
+        <div class="col-md-8"><div ng-view=""></div></div>
+      </div>
+
+
+
 
 
     </div>
@@ -52,13 +58,14 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/documents.js"></script>
         <!-- endbuild -->
 </body>
 </html>
