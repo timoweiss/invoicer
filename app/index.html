@@ -23,13 +23,17 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="row">
-        <div class="col-md-12"><div ng-include src="'views/header.html'"></div></div>
-      </div>
 
       <div class="row">
-        <div class="col-md-4"><div ng-include src="'views/sidebar.html'"></div></div>
-        <div class="col-md-8"><ui-view></ui-view></div>
+        <div class="col-md-2">
+          <div ng-include src="'views/sidebar.html'"></div>
+        </div>
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-12 header"><div ng-include src="'views/header.html'"></div></div>
+            <div class="col-md-12 content"><ui-view></ui-view></div>
+          </div>
+        </div>
       </div>
 
 

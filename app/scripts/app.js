@@ -19,7 +19,7 @@ angular
         'ui.router'
     ])
     .config(function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/state1");
+        $urlRouterProvider.otherwise("/");
         $stateProvider
             .state('main', {
                 url: '/',
@@ -35,5 +35,5 @@ angular
                 url: '/clients',
                 templateUrl: 'views/clients.html',
                 controller: 'ClientsCtrl'
-            })
+            });
     });
