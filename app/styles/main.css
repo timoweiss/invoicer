@@ -1,52 +1,85 @@
-/* Space out content a bit */
-body {
-  padding:0;
-  margin:0;
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../fonts/Lato-Light.ttf') format('truetype');
+}
+/* Space out content a bit */
 
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato';
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
+
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-
 /* Custom page header */
+
 .header {
     background: #ecf0f1;
 }
-
 .container {
     background: url('../images/tmp/background.png') no-repeat left top;
 }
-
 .content {
     background: url('../images/tmp/content.png') no-repeat left top;
 }
-
 /* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
 
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
 .sidebar {
     padding: 0px;
 }
-
 .sidebar img {
     width: 100%;
     height: auto;
 }
-
-
+.sidebar button {
+    border: none;
+    border-top: 1px solid #697f94;
+    border-bottom: 1px solid #697f94;
+    width: 100%;
+    outline: none;
+    background: none;
+    color: #d3e9ff;
+    text-transform: uppercase;
+    padding: 30px 0;
+    font-family: 'Lato-Light';
+    font-size: 20px;
+    background: linear-gradient(to top right, transparent 40%, rgba(255, 255, 255, 0.1) 80%);
+    transition-duration: 0.4s;
+    transition-property: color;
+}
+.sidebar button:hover {
+    color: white;
+}
+.sidebar button i {
+    font-size: 30px;
+    padding-bottom: 10px;
+    transition-duration: 1s;
+    transition-property: font-size;
+}
+.sidebar button:hover i {
+    font-size: 40px;
+}
 /* Responsive: Portrait tablets and up */
+
 @media screen and (min-width: 768px) {
-  /* Remove the padding we set earlier */
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
+    /* Remove the padding we set earlier */
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
