@@ -18,21 +18,22 @@ angular
         'ngTouch',
         'ui.router'
     ])
-    .config(function($routeProvider) {
-        $routeProvider
-            .when('/', {
+    .config(function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise("/state1");
+        $stateProvider
+            .state('main', {
+                url: '/',
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl'
             })
-            .when('/documents', {
+            .state('documents', {
+                url: '/documents',
                 templateUrl: 'views/documents.html',
                 controller: 'DocumentsCtrl'
             })
-            .when('/clients', {
+            .state('clients', {
+                url: '/clients',
                 templateUrl: 'views/clients.html',
                 controller: 'ClientsCtrl'
             })
-            .otherwise({
-                redirectTo: '/'
-            });
     });
