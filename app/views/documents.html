@@ -1,1 +1,18 @@
 documents
+<div >
+
+    <table ng-table="tableParams" class="table">
+        <tr ng-repeat="invoice in invoices">
+            <td data-title="'Name'" sortable="'name'">
+                {{invoice.name}}
+            </td>
+            <td data-title="'Kunde'" sortable="'client'">
+                {{invoice.client}}
+            </td>
+            <td data-title="'Datum'" sortable="'invoiceDate'">
+                {{invoice.invoiceDate}}
+            </td>
+        </tr>
+    </table>
+
+</div>
