@@ -1,23 +1,10 @@
-<div>
-    <table class="table">
-        <tr>
-            <th><i class="fa fa-bars"></i></th>
-            <th>Name <i class="fa fa-angle-up"></i></th>
-            <th>Kunde <i class="fa fa-angle-up"></i></th>
-            <th>Datum <i class="fa fa-angle-up"></i></th>
-        </tr>
-        <tr ng-repeat="client in clients">
-            <td><i class="fa fa-plus"></i></td>
-            <td data-title="'Name'" sortable="'name'">
-                {{client.name}}
-            </td>
-            <td data-title="'company'" sortable="'companyName'">
-                {{client.companyName}}
-            </td>
-            <td data-title="'Mail'" sortable="'mail'">
-                {{client.mail}}
-            </td>
-        </tr>
-    </table>
+<material-list>
+    <material-whiteframe class="material-whiteframe-z1" ng-repeat="client in clients">
 
-</div>
+         <h2>{{client.name}}</h2>
+         <h3>{{client.companyName}}</h3>
+         <p>
+           {{client.mail}}
+         </p>
+    </material-whiteframe>
+</material-list>
