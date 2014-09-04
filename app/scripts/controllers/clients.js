@@ -8,12 +8,12 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope) {
+    .controller('ClientsCtrl', function($scope, ClientsService) {
 
-        console.log('asd')
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+        $scope.clients = [];
+        ClientsService.getClients().then(function(resp) {
+            if (resp.status === 200) {
+                $scope.clients = resp.data;
+            }
+        });
     });

@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name invoicePocApp.controller:AboutCtrl
+ * @name invoicePocApp.controller:DocumentsCtrl
  * @description
- * # AboutCtrl
+ * # DocumentsCtrl
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
