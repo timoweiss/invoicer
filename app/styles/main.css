@@ -123,11 +123,22 @@ material-whiteframe .pointer {
 .invoice {
     width: 100%;
     float: left;
+    padding: 10px 0;
 }
+
+.invoice .fa {
+    padding-right: 15px;
+}
+
 .invoice .invoiceItem {
     float: left;
     width: 100%;
 }
+
+.invoice .itemName, .table .name-head {
+    padding-left: 43px;
+}
+
 .delete-button {
     position: absolute;
     right: 8px;
