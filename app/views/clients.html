@@ -1,17 +1,13 @@
 <div class="sample">
 
-    <material-tabs selected="selectedIndex" style="background-color: #4285F4;">
-
+    <material-tabs selected="selectedIndex">
         <material-tab ng-repeat="tab in tabs">
             {{tab.title}}
         </material-tab>
-
     </material-tabs>
 
     <div class="animate-switch-container" ng-switch on="selectedIndex">
-
-        <div class="animate-switch blueArea" ng-switch-when="0">
-
+        <div ng-switch-when="0">
             <material-list>
                 <material-whiteframe class="material-whiteframe-z1" ng-repeat="client in clients">
 
@@ -22,14 +18,10 @@
                     </p>
                 </material-whiteframe>
             </material-list>
-
         </div>
-
-        <div class="animate-switch blueArea" ng-switch-when="1">
-            View for Item #2
-            <br/>Selection index = 1
+        <div class="" ng-switch-when="1">
+            Form goes here
         </div>
-
     </div>
 </div>
 
