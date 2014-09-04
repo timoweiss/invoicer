@@ -35,12 +35,26 @@
     </table>
 
     <div class="table">
+        <div class="name-head col-xs-4"><h3>Name</h3></div>
+        <div class="Kunde col-xs-4"><h3>Kunde</h3></div>
+        <div class="Datum col-xs-4"><h3>Datum</h3></div>
+
+
+
         <div class="invoice" ng-repeat="invoice in invoices">
-            <div class="name col-xs-4">{{invoice.name}}</div>
+            <div class="name col-xs-4"><i class="fa fa-plus"></i>{{invoice.name}}</div>
             <div class="Kunde col-xs-4">{{invoice.client}}</div>
             <div class="Datum col-xs-4">{{invoice.invoiceDate}}</div>
+            
+            
+            
+            <div class="col-xs-4 itemName"><b>Name</b></div>
+                <div class="col-xs-4 itemDescription"><b>Description</b></div>
+                <div class="col-xs-4 itemUnitCosts"><b>Kosten</b></div>
             <div class="invoiceItem" ng-repeat="ic in invoice.invoiceContent">
 
+                
+                
                 <div class="col-xs-4 itemName">{{ic.itemName}}</div>
                 <div class="col-xs-4 itemDescription">{{ic.itemDescription}}</div>
                 <div class="col-xs-4 itemUnitCosts">{{ic.itemUnitcosts}}</div>
