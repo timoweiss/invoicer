@@ -117,19 +117,22 @@ material-whiteframe .pointer {
     border-top: 2px solid white;
     /*border-bottom: 2px solid white;*/
 }
-
 .invoice:last-child {
     border-bottom: 2px solid white;
 }
-
 .invoice {
     width: 100%;
     float: left;
 }
-
 .invoice .invoiceItem {
     float: left;
     width: 100%;
+}
+.delete-button {
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    background: #fff;
 }
 /* Responsive: Portrait tablets and up */
 
