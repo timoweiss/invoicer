@@ -31,11 +31,14 @@ angular.module('invoicePocApp')
             formData.country = $scope.formdata.country;
             formData.zip = $scope.formdata.zip;
             formData.mail = $scope.formdata.mail;
+            formData.id = $scope.formdata.id;
             formData.createDate = Date.now();
-            ClientsService.saveClient(formData);
-            $scope.formdata = {};
-            $scope.selectedIndex = 0;
-            $scope.updateClients();
+            ClientsService.saveClient(formData).then(function() {
+                $scope.formdata = {};
+                $scope.selectedIndex = 0;
+                $scope.updateClients();
+            });
+
         };
 
         $scope.editClient = function(clientId) {
