@@ -76,14 +76,32 @@ body {
 .sidebar button:hover i {
     font-size: 40px;
 }
-
 material-whiteframe {
-  background: #fff;
-  margin: 20px;
-  padding: 20px;
-  float:left;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    float: left;
 }
-
+.input-group input {
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 0px !important;
+}
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.input-group button {
+    margin: 10px;
+    padding: 20px;
+    border: 0px;
+    background: white;
+    width: 300px;
+}
+.float-width {
+    float: left;
+    width: 100%
+}
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {

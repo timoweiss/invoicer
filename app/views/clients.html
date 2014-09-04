@@ -23,13 +23,16 @@
 
             <div class="input-group">
 
-                <input type="text" class="form-control" placeholder="Name">
-                <input type="text" class="form-control" placeholder="Vorname">
-                <input type="text" class="form-control" placeholder="Company Name">
-                <input type="text" class="form-control" placeholder="Contact Data">
-                <input type="text" class="form-control" placeholder="Country">
-                <input type="text" class="form-control" placeholder="Zip">
-                <input type="text" class="form-control" placeholder="Mail">
+                <input type="text" ng-model="name" class="form-control" placeholder="Name">
+                <input type="text" ng-model="firstname" class="form-control" placeholder="Vorname">
+                <input type="text" ng-model="companyName" class="form-control" placeholder="Company Name">
+                <input type="text" ng-model="contactData" class="form-control" placeholder="Contact Data">
+                <input type="text" ng-model="country" class="form-control" placeholder="Country">
+                <input type="text" ng-model="zip" class="form-control" placeholder="Zip">
+                <input type="text" ng-model="mail" class="form-control" placeholder="Mail">
+                <div class="float-width">
+                    <button ng-click="saveClient()">abfeuern</button>
+                </div>
 
             </div>
 
