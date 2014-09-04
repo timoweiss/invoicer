@@ -11,11 +11,16 @@ angular.module('invoicePocApp')
     .controller('ClientsCtrl', function($scope, ClientsService, $state) {
 
         $scope.clients = [];
-        ClientsService.getClients().then(function(resp) {
-            if (resp.status === 200) {
-                $scope.clients = resp.data;
-            }
-        });
+        $scope.formdata = {};
+
+        $scope.updateClients = function() {
+            ClientsService.getClients().then(function(resp) {
+                if (resp.status === 200) {
+                    $scope.clients = resp.data;
+                }
+            });
+        };
+        $scope.updateClients();
 
         $scope.saveClient = function() {
             var formData = {};
@@ -28,12 +33,19 @@ angular.module('invoicePocApp')
             formData.mail = $scope.formdata.mail;
             formData.createDate = Date.now();
             ClientsService.saveClient(formData);
+            $scope.formdata = {};
+            $scope.selectedIndex = 0;
+            $scope.updateClients();
         };
 
         $scope.editClient = function(clientId) {
             console.log(clientId);
             $scope.selectedIndex = 1;
-            console.log();
+            angular.forEach($scope.clients, function(val) {
+                if (val.id === clientId) {
+                    $scope.formdata = val;
+                }
+            });
         };
 
         var tabs = [{
