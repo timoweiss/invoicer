@@ -27,6 +27,7 @@ body {
 }
 .container {
     background: url('../images/tmp/background.png') no-repeat left top;
+    max-width: 970px;
 }
 .content {
     background: url('../images/tmp/content.png') no-repeat left top;
