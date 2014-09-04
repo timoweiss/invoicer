@@ -8,7 +8,7 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope, ClientsService) {
+    .controller('ClientsCtrl', function($scope, ClientsService, $state) {
 
         $scope.clients = [];
         ClientsService.getClients().then(function(resp) {
@@ -19,15 +19,21 @@ angular.module('invoicePocApp')
 
         $scope.saveClient = function() {
             var formData = {};
-            formData.name = $scope.name;
-            formData.firstname = $scope.firstname;
-            formData.companyName = $scope.companyName;
-            formData.contactData = $scope.contactData;
-            formData.country = $scope.country;
-            formData.zip = $scope.zip;
-            formData.mail = $scope.mail;
+            formData.name = $scope.formdata.name;
+            formData.firstname = $scope.formdata.firstname;
+            formData.companyName = $scope.formdata.companyName;
+            formData.contactData = $scope.formdata.contactData;
+            formData.country = $scope.formdata.country;
+            formData.zip = $scope.formdata.zip;
+            formData.mail = $scope.formdata.mail;
             formData.createDate = Date.now();
             ClientsService.saveClient(formData);
+        };
+
+        $scope.editClient = function(clientId) {
+            console.log(clientId);
+            $scope.selectedIndex = 1;
+            console.log();
         };
 
         var tabs = [{
