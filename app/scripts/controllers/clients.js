@@ -8,7 +8,7 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope, ClientsService, $state, $swipe) {
+    .controller('ClientsCtrl', function($scope, ClientsService, $state, $materialDialog) {
 
         $scope.clients = [];
         $scope.formdata = {};
@@ -51,10 +51,28 @@ angular.module('invoicePocApp')
             });
         };
 
-        $scope.removeClient = function(clientId) {
-            if (!clientId) return;
-            ClientsService.removeClient(clientId).then(function() {
-                $scope.updateClients();
+        $scope.removeDialog = function(e, id) {
+            var removeClient = $scope.removeClient;
+            var updateClients = $scope.updateClients;
+            var _id = id || null;
+            $materialDialog({
+                templateUrl: '/views/dialogs/removeDialog.html',
+                targetEvent: e,
+                controller: ['$scope', '$hideDialog',
+                    function($scope, $hideDialog) {
+                        $scope.clientId = _id;
+                        $scope.close = function() {
+                            $hideDialog();
+                        };
+                        $scope.removeClient = function(clientId) {
+                            if (!clientId) return;
+                            ClientsService.removeClient(clientId).then(function() {
+                                updateClients();
+                                $scope.close();
+                            });
+                        };
+                    }
+                ]
             });
         };
 
