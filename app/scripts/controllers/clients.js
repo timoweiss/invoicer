@@ -8,16 +8,17 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope, ClientsService, $state, $materialDialog) {
+    .controller('ClientsCtrl', function($scope, ClientsService, $state, $materialDialog, $materialToast, $animate) {
 
         $scope.clients = [];
         $scope.formdata = {};
 
         $scope.updateClients = function() {
-            ClientsService.getClients().then(function(resp) {
+            return ClientsService.getClients().then(function(resp) {
                 if (resp.status === 200) {
                     $scope.clients = resp.data;
                 }
+                return resp;
             });
         };
         $scope.updateClients();
@@ -54,6 +55,7 @@ angular.module('invoicePocApp')
         $scope.removeDialog = function(e, id) {
             var removeClient = $scope.removeClient;
             var updateClients = $scope.updateClients;
+            var complexToastIt = $scope.complexToastIt;
             var _id = id || null;
             $materialDialog({
                 templateUrl: '/views/dialogs/removeDialog.html',
@@ -65,14 +67,32 @@ angular.module('invoicePocApp')
                             $hideDialog();
                         };
                         $scope.removeClient = function(clientId) {
-                            if (!clientId) return;
-                            ClientsService.removeClient(clientId).then(function() {
-                                updateClients();
-                                $scope.close();
-                            });
+                            if (!clientId) {
+                                return;
+                            }
+                            ClientsService.removeClient(clientId)
+                                .then(complexToastIt)
+                                .then(function() {
+                                    updateClients();
+                                    $scope.close();
+                                });
                         };
                     }
                 ]
+            });
+        };
+
+        $scope.complexToastIt = function() {
+            console.log(arguments);
+            $materialToast({
+                controller: function($scope, $hideToast) {
+                    $scope.closeToast = function() {
+                        $hideToast();
+                    };
+                },
+                templateUrl: 'views/toasts/success-save.html',
+                duration: 2000,
+                position: 'bottom left'
             });
         };
 
