@@ -1,44 +1,44 @@
+<material-tabs selected="selectedIndex">
+    <material-tab ng-repeat="tab in tabs">
+        {{tab.title}}
+    </material-tab>
+</material-tabs>
 
+<div class="animate-switch-container" ng-switch on="selectedIndex">
+    <div ng-switch-when="0">
+        <material-list>
 
-    <material-tabs selected="selectedIndex">
-        <material-tab ng-repeat="tab in tabs">
-            {{tab.title}}
-        </material-tab>
-    </material-tabs>
-
-    <div class="animate-switch-container" ng-switch on="selectedIndex">
-        <div ng-switch-when="0">
-            <material-list>
-                <material-whiteframe class="material-whiteframe-z1" ng-repeat="client in clients">
-                    <div class="pointer" ng-click="editClient(client.id)">
-                        <h2>{{client.name}}</h2>
-                        <h3>{{client.companyName}}</h3>
-                        <p>
-                            {{client.mail}}
-                        </p>
-                    </div>
-                </material-whiteframe>
-            </material-list>
-        </div>
-        <div class="" ng-switch-when="1">
-
-            <div class="input-group">
-
-                <input type="text" ng-model="formdata.name" class="form-control" placeholder="Name">
-                <input type="text" ng-model="formdata.firstname" class="form-control" placeholder="Vorname">
-                <input type="text" ng-model="formdata.companyName" class="form-control" placeholder="Company Name">
-                <input type="text" ng-model="formdata.contactData" class="form-control" placeholder="Contact Data">
-                <input type="text" ng-model="formdata.country" class="form-control" placeholder="Country">
-                <input type="text" ng-model="formdata.zip" class="form-control" placeholder="Zip">
-                <input type="text" ng-model="formdata.mail" class="form-control" placeholder="Mail">
-                <div class="float-width">
-                    <button ng-click="saveClient()">abfeuern</button>
+            <material-whiteframe class="col-xs-6" ng-repeat="client in clients">
+                <div class="pointer material-whiteframe-z1" ng-click="editClient(client.id)">
+                    <h2>{{client.name}}</h2>
+                    <h3>{{client.companyName}}</h3>
+                    <p>
+                        {{client.mail}}
+                    </p>
                 </div>
+            </material-whiteframe>
 
+        </material-list>
+    </div>
+    <div class="" ng-switch-when="1">
+
+        <div class="input-group">
+
+            <input type="text" ng-model="formdata.name" class="form-control" placeholder="Name">
+            <input type="text" ng-model="formdata.firstname" class="form-control" placeholder="Vorname">
+            <input type="text" ng-model="formdata.companyName" class="form-control" placeholder="Company Name">
+            <input type="text" ng-model="formdata.contactData" class="form-control" placeholder="Contact Data">
+            <input type="text" ng-model="formdata.country" class="form-control" placeholder="Country">
+            <input type="text" ng-model="formdata.zip" class="form-control" placeholder="Zip">
+            <input type="text" ng-model="formdata.mail" class="form-control" placeholder="Mail">
+            <div class="float-width">
+                <button ng-click="saveClient()">abfeuern</button>
             </div>
 
         </div>
+
     </div>
+</div>
 
 
 

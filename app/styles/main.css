@@ -105,6 +105,17 @@ input:focus::-webkit-input-placeholder {
     float: left;
     width: 100%
 }
+
+material-whiteframe {
+    margin: 0px;
+    background: none;
+}
+
+material-whiteframe .pointer {
+    background: white;
+    padding: 15px;
+}
+
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
