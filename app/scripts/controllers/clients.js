@@ -17,6 +17,18 @@ angular.module('invoicePocApp')
             }
         });
 
+        $scope.saveClient = function() {
+            var formData = {};
+            formData.name = $scope.name;
+            formData.firstname = $scope.firstname;
+            formData.companyName = $scope.companyName;
+            formData.contactData = $scope.contactData;
+            formData.country = $scope.country;
+            formData.zip = $scope.zip;
+            formData.mail = $scope.mail;
+            formData.createDate = Date.now();
+            ClientsService.saveClient(formData);
+        };
 
         var tabs = [{
             title: 'Kunde',
