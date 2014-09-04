@@ -8,7 +8,7 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope, ClientsService, $state) {
+    .controller('ClientsCtrl', function($scope, ClientsService, $state, $swipe) {
 
         $scope.clients = [];
         $scope.formdata = {};
@@ -48,6 +48,13 @@ angular.module('invoicePocApp')
                 if (val.id === clientId) {
                     $scope.formdata = val;
                 }
+            });
+        };
+
+        $scope.removeClient = function(clientId) {
+            if (!clientId) return;
+            ClientsService.removeClient(clientId).then(function() {
+                $scope.updateClients();
             });
         };
 

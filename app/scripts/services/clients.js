@@ -17,6 +17,15 @@ angular.module('invoicePocApp')
                 return $http.put('http://localhost:2403/clients', formData);
             }
 
+        },
+        removeClient: function(clientId) {
+            if (!clientId) {
+                throw new TypeError('clientId not defined');
+            }
+
+            return $http.delete('http://localhost:2403/clients/' + clientId);
+
+
         }
     };
 });

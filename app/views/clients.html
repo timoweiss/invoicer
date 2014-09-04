@@ -9,15 +9,18 @@
     <div class="animate-switch-container" ng-switch on="selectedIndex">
         <div ng-switch-when="0">
             <material-list>
-                <material-whiteframe class="material-whiteframe-z1" ng-repeat="client in clients">
-                    <div class="pointer" ng-click="editClient(client.id)">
+                <material-whiteframe class="material-whiteframe-z1 client" ng-repeat="client in clients">
+                    <div class="pointer" ng-swipe-left="showActions = true" ng-click="editClient(client.id)">
                         <h2>{{client.name}}</h2>
                         <h3>{{client.companyName}}</h3>
                         <p>
                             {{client.mail}}
                         </p>
+
                     </div>
+<div class="delete" ng-click="removeClient(client.id)"><i class="fa fa-trash"></i></div>
                 </material-whiteframe>
+
             </material-list>
         </div>
         <div class="" ng-switch-when="1">
