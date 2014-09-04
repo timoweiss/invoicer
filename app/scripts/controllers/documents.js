@@ -8,12 +8,23 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('DocumentsCtrl', function($scope, InvoiceService) {
+    .controller('DocumentsCtrl', function($scope, InvoiceService, ClientsService) {
         $scope.invoices = [];
-        InvoiceService.getInvoices().then(function(resp) {
-            if (resp.status === 200) {
-                $scope.invoices = resp.data;
-            }
+        InvoiceService.getInvoices().then(function(respInvoices) {
+            ClientsService.getClients().then(function(respClients) {
+                if (respInvoices.status === 200) {
+                    $scope.invoices = respInvoices.data;
+                    angular.forEach($scope.invoices, function(i) {
+                        angular.forEach(respClients.data, function(c) {
+                            if (c.id === i.client) {
+                                i.client = c;
+                            }
+                        });
+
+                    });
+                }
+            });
+
         });
 
 
