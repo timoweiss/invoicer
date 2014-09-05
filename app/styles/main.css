@@ -12,6 +12,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Lato';
+    height:725px;
+    width: 998px;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
@@ -24,16 +26,23 @@ body {
 
 .header {
     background: #ecf0f1;
+    height: 100px;
+}
+.fullHeight {
+    height:calc(100%);
 }
 .container {
     background: url('../images/tmp/background.png') no-repeat left top;
     max-width: 970px;
+    height: calc(100%);
 }
 .content {
     background: url('../images/tmp/content.png') no-repeat left top;
 }
 /* Custom page footer */
-
+.clientsContent {
+    height:584px;
+}
 .footer {
     padding-top: 19px;
     color: #777;
@@ -113,6 +122,12 @@ material-whiteframe .pointer {
     background: white;
     padding: 15px;
 }
+
+.hideScroll {
+    overflow-y: scroll;
+    width: 819px;
+}
+
 .invoice {
     border-top: 2px solid white;
     /*border-bottom: 2px solid white;*/
