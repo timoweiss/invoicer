@@ -139,7 +139,7 @@ material-whiteframe .pointer {
     padding-left: 43px;
 }
 
-.delete-button {
+material-button.material-button-fab, .delete-button {
     position: absolute;
     right: 8px;
     top: 3px;
@@ -148,7 +148,7 @@ material-whiteframe .pointer {
     transform: scale(0) translate3d(0, 0, 0) !important;
 }
 .client:hover .delete-button {
-    -webkit-transform: scale(0) translate3d(0, 0, 0);
+    -webkit-transform: scale(1) translate3d(0, 0, 0);
     transform: scale(1) translate3d(0, 0, 0) !important;
 }
 /* Responsive: Portrait tablets and up */
