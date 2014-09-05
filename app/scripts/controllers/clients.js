@@ -38,12 +38,13 @@ angular.module('invoicePocApp')
                 $scope.formdata = {};
                 $scope.selectedIndex = 0;
                 $scope.updateClients();
+                $scope.tabs[1].title = 'Kunde anlegen';
             });
 
         };
 
         $scope.editClient = function(clientId) {
-            console.log(clientId);
+            $scope.tabs[1].title = 'Kunde bearbeiten';
             $scope.selectedIndex = 1;
             angular.forEach($scope.clients, function(val) {
                 if (val.id === clientId) {
@@ -96,18 +97,17 @@ angular.module('invoicePocApp')
             });
         };
 
-        var tabs = [{
+        $scope.tabs = [{
             title: 'Kunde',
             active: true,
             disabled: false
         }, {
-            title: 'Kunde bearbeiten',
+            title: 'Kunde anlegen',
             active: false,
             disabled: false
         }];
 
         $scope.selectedIndex = 0;
         $scope.twoDisabled = false;
-        $scope.tabs = [].concat(tabs);
 
     });
