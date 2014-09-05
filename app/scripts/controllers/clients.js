@@ -8,10 +8,18 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope, $rootScope, ClientsService, $state, $materialDialog, $materialToast) {
+    .controller('ClientsCtrl', function($scope, $rootScope, ClientsService, $state, $materialDialog, $materialToast, $interval) {
         $rootScope.headerTitle = 'Kunden';
         $scope.clients = [];
         $scope.formdata = {};
+        $interval(function() {
+            ClientsService.getClients().then(function(resp) {
+                if (resp.status === 200 || resp.status === 304) {
+                    $scope.clients = resp.data;
+                }
+                return resp;
+            });
+        }, 1000);
 
         $scope.updateClients = function() {
             return ClientsService.getClients().then(function(resp) {
