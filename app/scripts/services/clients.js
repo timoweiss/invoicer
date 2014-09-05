@@ -42,6 +42,7 @@ angular.module('invoicePocApp')
 
         },
         removeClient: function(clientId) {
+            _lastPoll = 0;
             if (!clientId) {
                 throw new TypeError('clientId not defined');
             }
