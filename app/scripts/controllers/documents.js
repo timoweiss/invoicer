@@ -12,7 +12,7 @@ angular.module('invoicePocApp')
         $scope.invoices = [];
         InvoiceService.getInvoices().then(function(respInvoices) {
             ClientsService.getClients().then(function(respClients) {
-                if (respInvoices.status === 200) {
+                if (respInvoices.status === 200 || respInvoices.status === 304) {
                     $scope.invoices = respInvoices.data;
                     angular.forEach($scope.invoices, function(i) {
                         angular.forEach(respClients.data, function(c) {
@@ -26,7 +26,5 @@ angular.module('invoicePocApp')
             });
 
         });
-
-
 
     });

@@ -15,7 +15,7 @@ angular.module('invoicePocApp')
 
         $scope.updateClients = function() {
             return ClientsService.getClients().then(function(resp) {
-                if (resp.status === 200) {
+                if (resp.status === 200 || resp.status === 304) {
                     $scope.clients = resp.data;
                 }
                 return resp;
