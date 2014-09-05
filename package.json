@@ -46,10 +46,10 @@
     "window": {
         "title": "node-webkit demo",
         "icon": "link.png",
-        "toolbar": true,
-        "frame": true,
+        "toolbar": false,
+        "frame": false,
         "width": 1000,
-        "height": 600,
+        "height": 723,
         "position": "mouse",
         "min_width": 400,
         "min_height": 200
