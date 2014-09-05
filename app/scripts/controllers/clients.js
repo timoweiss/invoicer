@@ -8,7 +8,7 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ClientsCtrl', function($scope, $rootScope, ClientsService, $state, $materialDialog, $materialToast, $animate) {
+    .controller('ClientsCtrl', function($scope, $rootScope, ClientsService, $state, $materialDialog, $materialToast) {
         $rootScope.headerTitle = 'Kunden';
         $scope.clients = [];
         $scope.formdata = {};
