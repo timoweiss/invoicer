@@ -59,7 +59,7 @@ angular.module('invoicePocApp')
             var complexToastIt = $scope.complexToastIt;
             var _id = id || null;
             $materialDialog({
-                templateUrl: '/views/dialogs/removeDialog.html',
+                templateUrl: 'views/dialogs/removeDialog.html',
                 targetEvent: e,
                 controller: ['$scope', '$hideDialog',
                     function($scope, $hideDialog) {
