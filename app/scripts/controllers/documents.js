@@ -8,7 +8,8 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('DocumentsCtrl', function($scope, InvoiceService, ClientsService) {
+    .controller('DocumentsCtrl', function($scope, $rootScope, InvoiceService, ClientsService) {
+        $rootScope.headerTitle = 'Dokumente';
         $scope.invoices = [];
         InvoiceService.getInvoices().then(function(respInvoices) {
             ClientsService.getClients().then(function(respClients) {
