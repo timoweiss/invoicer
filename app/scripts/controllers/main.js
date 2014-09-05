@@ -8,10 +8,11 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('MainCtrl', function($scope, $rootScope) {
+        $rootScope.headerTitle = 'Übersicht';
+        $scope.awesomeThings = [
+            'HTML5 Boilerplate',
+            'AngularJS',
+            'Karma'
+        ];
+    });

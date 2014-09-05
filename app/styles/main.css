@@ -144,6 +144,12 @@ material-whiteframe .pointer {
     right: 8px;
     top: 3px;
     background: #fff;
+    -webkit-transform: scale(0) translate3d(0, 0, 0);
+    transform: scale(0) translate3d(0, 0, 0) !important;
+}
+.client:hover .delete-button {
+    -webkit-transform: scale(0) translate3d(0, 0, 0);
+    transform: scale(1) translate3d(0, 0, 0) !important;
 }
 /* Responsive: Portrait tablets and up */
 
