@@ -31,13 +31,13 @@ body {
 }
 .fullHeight {
     height: calc(100%);
+    background-image: url('../images/patterns/green.png');
 }
 .container-fluid {
-    background: url('../images/tmp/background.png') no-repeat left top;
     height: calc(100%);
 }
 .content {
-    background: url('../images/tmp/content.png') no-repeat left top;
+    min-height: calc(100%);
 }
 /* Custom page footer */
 
@@ -51,6 +51,7 @@ body {
 }
 .sidebar {
     padding: 10px 0;
+    background: url('../images/patterns/blue.png');
 }
 .sidebar img {
     width: 100%;
@@ -180,7 +181,8 @@ material-button.material-button-fab,
     font-family: 'Lato-Light';
     font-size: 25px;
     padding-left: 20px;
-    padding-top: 20px;
+    margin: 0;
+    padding-top: 40px;
 }
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
@@ -193,4 +195,10 @@ material-button.material-button-fab,
 .invoice .items {
     float: left;
     display: none;
+}
+.tabs-header {
+    background: none;
+    color: white;
+    background: rgba(39, 174, 96, 0.6);
+    margin-bottom: 10px;
 }
