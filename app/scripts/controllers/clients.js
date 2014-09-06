@@ -12,6 +12,8 @@ angular.module('invoicePocApp')
         $rootScope.headerTitle = 'Kunden';
         $scope.clients = [];
         $scope.formdata = {};
+
+        // This is just for fun!
         $interval(function() {
             ClientsService.getClients().then(function(resp) {
                 if (resp.status === 200 || resp.status === 304) {
@@ -30,7 +32,10 @@ angular.module('invoicePocApp')
             });
         };
         $scope.updateClients();
-
+        /**
+         * get the form data and persist it
+         * redirect to the overview
+         */
         $scope.saveClient = function() {
             var formData = {};
             formData.name = $scope.formdata.name;
