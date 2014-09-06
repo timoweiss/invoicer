@@ -1,43 +1,15 @@
 <div>
-    <table class="table">
-        <tr>
-            <th>
-                <i class="fa fa-bars"></i>
-            </th>
-            <th>Name
-                <i class="fa fa-angle-up"></i>
-            </th>
-            <th>Kunde
-                <i class="fa fa-angle-up"></i>
-            </th>
-            <th>Datum
-                <i class="fa fa-angle-up"></i>
-            </th>
-        </tr>
-        <tr ng-repeat="invoice in invoices">
-            <td>
-                <i class="fa fa-plus"></i>
-            </td>
-            <td data-title="'Name'" sortable="'name'">
-                {{invoice.name}}
-            </td>
-            <td data-title="'Kunde'" sortable="'client'">
-                {{invoice.client}}
-            </td>
-            <td data-title="'Datum'" sortable="'invoiceDate'">
-                {{invoice.invoiceDate}}
-            </td>
-
-            <td ng-repeat="ic in invoice.invoiceContent" data-title="'Beschreibung'" sortable="'invoiceBeschreibung'">
-                {{ic.itemName}}
-            </td>
-        </tr>
-    </table>
-
+    
     <div class="table">
-        <div class="name-head col-xs-4"><h3>Name</h3></div>
-        <div class="Kunde col-xs-4"><h3>Kunde</h3></div>
-        <div class="Datum col-xs-4"><h3>Datum</h3></div>
+        <div class="name-head col-xs-4">
+            <h3>Name</h3>
+        </div>
+        <div class="Kunde col-xs-4">
+            <h3>Kunde</h3>
+        </div>
+        <div class="Datum col-xs-4">
+            <h3>Datum</h3>
+        </div>
 
 
 
@@ -45,22 +17,23 @@
             <div class="name col-xs-4"><i class="fa fa-plus"></i>{{invoice.name}}</div>
             <div class="Kunde col-xs-4">{{invoice.client}}</div>
             <div class="Datum col-xs-4">{{invoice.invoiceDate}}</div>
-            
-            
-            
-            <div class="col-xs-4 itemName"><b>Name</b></div>
-                <div class="col-xs-4 itemDescription"><b>Description</b></div>
-                <div class="col-xs-4 itemUnitCosts"><b>Kosten</b></div>
-            <div class="invoiceItem" ng-repeat="ic in invoice.invoiceContent">
 
-                
-                
-                <div class="col-xs-4 itemName">{{ic.itemName}}</div>
-                <div class="col-xs-4 itemDescription">{{ic.itemDescription}}</div>
-                <div class="col-xs-4 itemUnitCosts">{{ic.itemUnitcosts}}</div>
+
+
+            <!--<div class="col-xs-4 itemName"><b>Name</b></div>
+                <div class="col-xs-4 itemDescription"><b>Description</b></div>
+                <div class="col-xs-4 itemUnitCosts"><b>Kosten</b></div> -->
+            <div class="items">
+                <div class="invoiceItem" ng-repeat="ic in invoice.invoiceContent">
+
+                    <div class="col-xs-4 itemName">{{ic.itemName}}</div>
+                    <div class="col-xs-4 itemDescription">{{ic.itemDescription}}</div>
+                    <div class="col-xs-4 itemUnitCosts">{{ic.itemUnitcosts}}</div>
+                </div>
             </div>
         </div>
 
     </div>
 
 </div>
+

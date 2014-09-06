@@ -12,8 +12,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Lato';
-    height:725px;
-    width: 998px;
+    height: 725px;
     /* avoid scrollbars */
     overflow: hidden;
 }
@@ -31,19 +30,19 @@ body {
     height: 100px;
 }
 .fullHeight {
-    height:calc(100%);
+    height: calc(100%);
 }
-.container {
+.container-fluid {
     background: url('../images/tmp/background.png') no-repeat left top;
-    max-width: 970px;
     height: calc(100%);
 }
 .content {
     background: url('../images/tmp/content.png') no-repeat left top;
 }
 /* Custom page footer */
+
 .clientsContent {
-    height:584px;
+    height: 584px;
 }
 .footer {
     padding-top: 19px;
@@ -124,12 +123,10 @@ material-whiteframe .pointer {
     background: white;
     padding: 15px;
 }
-
 .hideScroll {
     overflow-y: scroll;
     width: 819px;
 }
-
 .invoice {
     border-top: 2px solid white;
     /*border-bottom: 2px solid white;*/
@@ -142,21 +139,28 @@ material-whiteframe .pointer {
     float: left;
     padding: 10px 0;
 }
-
 .invoice .fa {
     padding-right: 15px;
 }
-
 .invoice .invoiceItem {
     float: left;
     width: 100%;
 }
-
-.invoice .itemName, .table .name-head {
+.table {
+    float: left;
+}
+.table h3 {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+.invoice .itemName,
+.table .name-head {
     padding-left: 43px;
 }
-
-material-button.material-button-fab, .delete-button {
+material-button.material-button-fab,
+.delete-button {
     position: absolute;
     right: 8px;
     top: 3px;
@@ -170,6 +174,14 @@ material-button.material-button-fab, .delete-button {
 }
 /* Responsive: Portrait tablets and up */
 
+.header h3 {
+    text-transform: uppercase;
+    padding: 30px 0;
+    font-family: 'Lato-Light';
+    font-size: 25px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
     .marketing,
@@ -177,4 +189,8 @@ material-button.material-button-fab, .delete-button {
         padding-left: 0;
         padding-right: 0;
     }
+}
+.invoice .items {
+    float: left;
+    display: none;
 }

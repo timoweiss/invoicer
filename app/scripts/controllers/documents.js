@@ -8,15 +8,15 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('DocumentsCtrl', function($scope, $rootScope, InvoiceService, ClientsService) {
+    .controller('DocumentsCtrl', function ($scope, $rootScope, InvoiceService, ClientsService) {
         $rootScope.headerTitle = 'Dokumente';
         $scope.invoices = [];
-        InvoiceService.getInvoices().then(function(respInvoices) {
-            ClientsService.getClients().then(function(respClients) {
+        InvoiceService.getInvoices().then(function (respInvoices) {
+            ClientsService.getClients().then(function (respClients) {
                 if (respInvoices.status === 200 || respInvoices.status === 304) {
                     $scope.invoices = respInvoices.data;
-                    angular.forEach($scope.invoices, function(i) {
-                        angular.forEach(respClients.data, function(c) {
+                    angular.forEach($scope.invoices, function (i) {
+                        angular.forEach(respClients.data, function (c) {
                             if (c.id === i.client) {
                                 i.client = c;
                             }
