@@ -48,10 +48,11 @@ angular.module('invoicePocApp')
             formData.id = $scope.formdata.id;
             formData.createDate = Date.now();
             ClientsService.saveClient(formData).then(function() {
-                $scope.formdata = {};
-                $scope.selectedIndex = 0;
-                $scope.updateClients();
-                $scope.tabs[1].title = 'Kunde anlegen';
+                $scope.updateClients().then(function() {
+                    $scope.formdata = {};
+                    $scope.selectedIndex = 0;
+                    $scope.tabs[1].title = 'Kunde anlegen';
+                });
             });
 
         };
