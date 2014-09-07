@@ -68,7 +68,6 @@ angular.module('invoicePocApp')
         };
 
         $scope.removeDialog = function(e, id) {
-            var removeClient = $scope.removeClient;
             var updateClients = $scope.updateClients;
             var complexToastIt = $scope.complexToastIt;
             var _id = id || null;
