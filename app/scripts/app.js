@@ -19,7 +19,8 @@ angular
         'ui.router',
         'ngMaterial'
     ])
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider, configProvider) {
+
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('main', {
@@ -36,5 +37,17 @@ angular
                 url: '/clients',
                 templateUrl: 'views/clients.html',
                 controller: 'ClientsCtrl'
+            })
+            .state('login', {
+                url: '/login',
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl'
             });
+    }).config(function(configProvider) {
+        var config = configProvider.$get();
+        var confDir = config.createConfigDir('myConfig');
+        config.getConfig(confDir, function() {
+            console.log(arguments);
+        })
+        console.log(confDir);
     });
