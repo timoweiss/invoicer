@@ -1,1 +1,14 @@
-<div class="header"><h3>{{headerTitle}}</h3></div>
+<div ng-controller="HeaderCtrl">
+
+    <div class="header">
+        <h3>{{headerTitle}}</h3>
+        <div class="user">
+            <img src="{{userImagePath}}" class="userimage">
+            <div class="userinfo">
+                <h3>Timo Weiss</h3>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -126,7 +126,7 @@ material-whiteframe .pointer {
 }
 .hideScroll {
     overflow-y: scroll;
-    width: 819px;
+    width: 102% ;
 }
 .invoice {
     border-top: 2px solid white;
@@ -183,6 +183,51 @@ material-button.material-button-fab,
     padding-left: 20px;
     margin: 0;
     padding-top: 40px;
+    float: left;
+}
+.header .user {
+    width: 160px;
+    position: absolute;
+    right: -100px;
+    margin: 22px 0;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 2px;
+    background: rgba(255,255,255,.0);
+    -webkit-transition: all 200ms ease-out;
+}
+.header .user:hover {
+    width: 160px;
+    margin: 22px 0;
+    right: 0px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 2px;
+    background: rgba(255,255,255,.8)
+}
+
+.header .user .userinfo {
+    opacity: 0;
+    padding: 0 0 0 10px;
+    float: right;
+    width: 100px;
+}
+.header .user:hover .userinfo {
+    opacity: 1;
+}
+.header .user h3 {
+    font-size:12px;
+    padding: 10px 0 0 0;
+}
+.user .userimage {
+    border-radius: 50%;
+    width: 50px;
+    float: left;
+    -webkit-transition: -webkit-transform 200ms ease-out;
+}
+.user .userimage:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
 }
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
