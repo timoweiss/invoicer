@@ -19,7 +19,7 @@ angular
         'ui.router',
         'ngMaterial'
     ])
-    .config(function($stateProvider, $urlRouterProvider, configProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/');
         $stateProvider
