@@ -48,11 +48,11 @@ angular
                 templateUrl: 'views/config.html',
                 controller: 'ConfigCtrl'
             });
-    }).config(function(configProvider) {
-        var config = configProvider.$get();
-        var confDir = config.createConfigDir('myConfig');
-        config.getConfig(confDir, function() {
-            console.log(arguments);
-        })
-        console.log(confDir);
+    // }).config(function(configProvider) {
+    //     var config = configProvider.$get();
+    //     var confDir = config.createConfigDir('myConfig');
+    //     config.getConfig(confDir, function() {
+    //         console.log(arguments);
+    //     })
+    //     console.log(confDir);
     });
