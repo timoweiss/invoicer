@@ -3,7 +3,7 @@
 var nwGui = require('nw.gui');
 
 // show devtools
-nwGui.Window.get().showDevTools();
+//nwGui.Window.get().showDevTools();
 
 var conf = require('node-webkit-config');
 

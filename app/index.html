@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -18,23 +19,28 @@
     <!-- build:css(.tmp) styles/tabs.css -->
     <link rel="stylesheet" href="styles/tabs.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="invoicePocApp">
+</head>
+
+<body ng-app="invoicePocApp">
 
     <!-- Add your site or application content here -->
     <div class="container-fluid">
 
-      <div class="row fullHeight">
-        <div class="col-md-2 sidebar fullHeight">
-          <div ng-include src="'views/sidebar.html'"></div>
+        <div class="row fullHeight">
+            <div class="col-md-2 sidebar fullHeight">
+                <div ng-include src="'views/sidebar.html'"></div>
+            </div>
+            <div class="col-md-10 fullHeight">
+                <div class="content-wrapper">
+                    <div class="row header">
+                        <div ng-include src="'views/header.html'"></div>
+                    </div>
+                    <div class="row content">
+                        <ui-view></ui-view>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-10 fullHeight">
-          <div class="content-wrapper">
-            <div class="row header"><div ng-include src="'views/header.html'"></div></div>
-            <div class="row content"><ui-view></ui-view></div>
-          </div>
-        </div>
-      </div>
 
 
 
@@ -68,23 +74,26 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/services/invoices.js"></script>
-        <script src="scripts/services/clients.js"></script>
-        <script src="scripts/services/header.js"></script>
-        <script src="scripts/services/config.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/invoices.js"></script>
+    <script src="scripts/services/clients.js"></script>
+    <script src="scripts/services/header.js"></script>
+    <script src="scripts/services/config.js"></script>
 
-        <script src="scripts/provider/config.js"></script>
-        <script src="scripts/provider/shortcut.js"></script>
+    <script src="scripts/provider/config.js"></script>
+    <script src="scripts/provider/shortcut.js"></script>
 
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/documents.js"></script>
-        <script src="scripts/controllers/clients.js"></script>
-        <script src="scripts/controllers/header.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/config.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/documents.js"></script>
+    <script src="scripts/controllers/clients.js"></script>
+    <script src="scripts/controllers/header.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/config.js"></script>
 
-        <!-- endbuild -->
+   
+
+    <!-- endbuild -->
 </body>
+
 </html>
