@@ -243,6 +243,47 @@ material-button.material-button-fab,
     margin: 100px auto;
     width: 80%;
 }
+
+
+/*
+    testing for config
+ */
+.zoom {
+    -webkit-animation: myfirst 2s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+    position: fixed;
+    left:0px; top:0px;
+    height:100%;
+    width: 100%;
+    background: yellow;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {
+        background: red;
+        width: 100%;
+        left:100px; top:100px;
+    }
+    to {
+        background: yellow;
+        width: 200%;
+        left:0px; top:0px;
+
+    }
+}
+/* Standard syntax */
+@keyframes myfirst {
+    from {
+        background: red;
+        width: 100%;
+    }
+    to {
+        background: yellow;
+        width: 200%;
+    }
+}
+
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
     .marketing,

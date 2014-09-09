@@ -8,7 +8,8 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ConfigCtrl', function($scope, $state) {
+    .controller('ConfigCtrl', function($scope, $rootScope, $state) {
+        $rootScope.headerTitle = 'Einstellungen';
         console.log(require('nw.gui'));
         $scope.login = function() {
             win.width = 1000;
