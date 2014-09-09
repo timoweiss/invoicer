@@ -42,6 +42,11 @@ angular
                 url: '/login',
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl'
+            })
+            .state('config', {
+                url: '/config',
+                templateUrl: 'views/config.html',
+                controller: 'ConfigCtrl'
             });
     }).config(function(configProvider) {
         var config = configProvider.$get();
