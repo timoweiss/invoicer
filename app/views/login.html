@@ -4,7 +4,11 @@
         <form ng-submit="login()">
             <input type="email" ng-model="formdata.name" class="form-control" placeholder="E-Mail">
             <input type="password" ng-model="formdata.firstname" class="form-control" >
-
+            <p style="float:left">
+                <material-checkbox ng-model="isChecked" aria-label="Finished?">
+                  Don't ask me again.
+                </material-checkbox>
+            </p>
             <div class="float-width">
                 <button type="submit">abfeuern</button>
             </div>
