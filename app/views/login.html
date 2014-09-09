@@ -1,9 +1,14 @@
 <div class="overlay">
     <div class="login">
         <div class="input-group">
+        <form ng-submit="login()">
+            <input type="email" ng-model="formdata.name" class="form-control" placeholder="E-Mail">
+            <input type="password" ng-model="formdata.firstname" class="form-control" >
 
-            <input type="text" ng-model="formdata.name" class="form-control" placeholder="Name">
-            <input type="text" ng-model="formdata.firstname" class="form-control" placeholder="Vorname">
+            <div class="float-width">
+                <button type="submit">abfeuern</button>
+            </div>
+            </form>
         </div>
     </div>
 </div>
