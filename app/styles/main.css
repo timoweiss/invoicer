@@ -229,6 +229,20 @@ material-button.material-button-fab,
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
 }
+
+.overlay {
+    position: fixed;
+    z-index:199;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: url('../images/tmp/loginBackground.jpg');
+}
+.overlay .login {
+    margin: 100px auto;
+    width: 80%;
+}
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
     .marketing,
