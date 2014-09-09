@@ -14,7 +14,8 @@
     "angular-route": "1.2.16",
     "font-awesome": "~4.2.0",
     "angular-ui-router": "~0.2.11",
-    "angular-material": "~0.0.2"
+    "angular-material": "~0.0.2",
+    "mousetrap": "~1.4.6"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
