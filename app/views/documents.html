@@ -15,7 +15,7 @@
 
         <div class="invoice" ng-repeat="invoice in invoices">
             <div class="name col-xs-4"><i class="fa fa-plus"></i>{{invoice.name}}</div>
-            <div class="Kunde col-xs-4">{{invoice.client}}</div>
+            <div class="Kunde col-xs-4" ng-click="editClient(client.id)">{{invoice.client.name}}</div>
             <div class="Datum col-xs-4">{{invoice.invoiceDate}}</div>
 
 
