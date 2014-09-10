@@ -1,1 +1,37 @@
-<div class="zoom">adasdasdsa</div>
+<div class="zoom">
+    {{config}}
+    <form class="form-horizontal">
+        <div class="form-group col-sm-6">
+            <div class="input-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.name" class="form-control" placeholder="Name">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.firstname" class="form-control" placeholder="Vorname">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.companyName" class="form-control" placeholder="Company Name">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.contactData" class="form-control" placeholder="Contact Data">
+                 <button ng-click="saveClient()">abfeuern</button>
+            </div>
+        </div>
+        <div class="form-group col-sm-6">
+
+            <div class="input-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.country" class="form-control" placeholder="Country">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.zip" class="form-control" placeholder="Zip">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                <input type="text" ng-model="formdata.mail" class="form-control" placeholder="Mail">
+
+
+
+            </div>
+        </div>
+</form>
+</div>

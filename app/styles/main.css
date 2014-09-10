@@ -88,7 +88,7 @@ body {
     font-size: 40px;
 }
 material-whiteframe {
-    background: #fff;
+    background: rgba(255,255,255,.8);
     margin: 20px;
     padding: 20px;
     float: left;
@@ -121,7 +121,11 @@ material-whiteframe {
     background: none;
 }
 material-whiteframe .pointer {
-    background: white;
+    background: rgba(255,255,255,.8);
+    padding: 15px;
+}
+material-whiteframe:hover .pointer {
+    background: rgba(255,255,255,1);
     padding: 15px;
 }
 .hideScroll {
@@ -245,45 +249,7 @@ material-button.material-button-fab,
     testing for config
  */
 
-.zoom {
-    -webkit-animation: myfirst 2s;
-    /* Chrome, Safari, Opera */
-    animation: myfirst 5s;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    background: yellow;
-}
-/* Chrome, Safari, Opera */
 
-@-webkit-keyframes myfirst {
-    from {
-        background: red;
-        width: 100%;
-        left: 100px;
-        top: 100px;
-    }
-    to {
-        background: yellow;
-        width: 200%;
-        left: 0px;
-        top: 0px;
-    }
-}
-/* Standard syntax */
-
-@keyframes myfirst {
-    from {
-        background: red;
-        width: 100%;
-    }
-    to {
-        background: yellow;
-        width: 200%;
-    }
-}
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
     .marketing,
