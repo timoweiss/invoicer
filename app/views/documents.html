@@ -1,37 +1,40 @@
 <div>
-    
+
     <div class="table">
-        <div class="name-head col-xs-4">
-            <h3>Name</h3>
-        </div>
-        <div class="Kunde col-xs-4">
-            <h3>Kunde</h3>
-        </div>
-        <div class="Datum col-xs-4">
-            <h3>Datum</h3>
-        </div>
 
-
-
-        <div class="invoice" ng-repeat="invoice in invoices">
-            <div class="name col-xs-4"><i class="fa fa-plus"></i>{{invoice.name}}</div>
-            <div class="Kunde col-xs-4" ng-click="editClient(client.id)">{{invoice.client.name}}</div>
-            <div class="Datum col-xs-4">{{invoice.invoiceDate}}</div>
-
-
-
-            <!--<div class="col-xs-4 itemName"><b>Name</b></div>
-                <div class="col-xs-4 itemDescription"><b>Description</b></div>
-                <div class="col-xs-4 itemUnitCosts"><b>Kosten</b></div> -->
-            <div class="items">
-                <div class="invoiceItem" ng-repeat="ic in invoice.invoiceContent">
-
-                    <div class="col-xs-4 itemName">{{ic.itemName}}</div>
-                    <div class="col-xs-4 itemDescription">{{ic.itemDescription}}</div>
-                    <div class="col-xs-4 itemUnitCosts">{{ic.itemUnitcosts}}</div>
+        <material-whiteframe class="lessmaterialpadding col-xs-12" ng-repeat="invoice in invoices">
+            <div ng-click="toggleInvoice($event)" class="document pointer material-whiteframe-z1">
+                <i class="fa fa-plus col-xs-1"></i>
+                <h3 class="col-xs-3">{{invoice.name}}</h3>
+                <h3 class="col-xs-4">{{invoice.client.name}}</h3>
+                <h3 class="col-xs-2">{{invoice.invoiceDate}}</h3>
+                <div class="buttons col-xs-2">
+                    <i class="fa fa-pencil"></i>
+                    <i class="fa fa-trash"></i>
                 </div>
+
+                <div class="items">
+                    <hr>
+                    <div class="invoiceItem" ng-repeat="ic in invoice.invoiceContent">
+
+                        <div class="col-xs-3 col-xs-offset-1 itemName">{{ic.itemName}}</div>
+                        <div class="col-xs-4 itemDescription">{{ic.itemDescription}}</div>
+                        <div class="col-xs-1 itemUnitCosts">{{ic.itemQuantity}} X
+
+                        </div>
+
+                        <div class="col-xs-1 itemUnitCosts">{{ic.itemUnitcosts}}
+                            <span ng-if="ic.itemUnitcosts">€</span>
+                        </div>
+
+                        <div class="col-xs-2 itemUnitCosts">{{ic.itemUnitcosts * ic.itemQuantity}}
+                            <span ng-if="ic.itemUnitcosts">€</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </material-whiteframe>
 
     </div>
 

@@ -11,6 +11,14 @@ angular.module('invoicePocApp')
     .controller('DocumentsCtrl', function ($scope, $rootScope, InvoiceService, ClientsService) {
         $rootScope.headerTitle = 'Dokumente';
         $scope.invoices = [];
+
+        $scope.toggleInvoice = function ($event) {
+            var el = $event.currentTarget;
+
+
+            $(el).find('.items').toggleClass('show');
+        };
+
         InvoiceService.getInvoices().then(function (respInvoices) {
             ClientsService.getClients().then(function (respClients) {
                 if (respInvoices.status === 200 || respInvoices.status === 304) {

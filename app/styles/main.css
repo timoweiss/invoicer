@@ -126,7 +126,7 @@ material-whiteframe .pointer {
 }
 .hideScroll {
     overflow-y: scroll;
-    width: 102% ;
+    width: 102%;
 }
 .invoice {
     border-top: 2px solid white;
@@ -193,7 +193,7 @@ material-button.material-button-fab,
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     padding: 2px;
-    background: rgba(255,255,255,.0);
+    background: rgba(255, 255, 255, .0);
     -webkit-transition: all 200ms ease-out;
 }
 .header .user:hover {
@@ -203,9 +203,8 @@ material-button.material-button-fab,
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     padding: 2px;
-    background: rgba(255,255,255,.8)
+    background: rgba(255, 255, 255, .8)
 }
-
 .header .user .userinfo {
     opacity: 0;
     padding: 0 0 0 10px;
@@ -216,7 +215,7 @@ material-button.material-button-fab,
     opacity: 1;
 }
 .header .user h3 {
-    font-size:12px;
+    font-size: 12px;
     padding: 10px 0 0 0;
 }
 .user .userimage {
@@ -229,50 +228,52 @@ material-button.material-button-fab,
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
 }
-
 .overlay {
     position: fixed;
-    z-index:199;
+    z-index: 199;
     top: 0px;
     left: 0px;
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     background: url('../images/tmp/loginBackground.jpg');
 }
 .overlay .login {
     margin: 100px auto;
     width: 80%;
 }
-
-
 /*
     testing for config
  */
+
 .zoom {
-    -webkit-animation: myfirst 2s; /* Chrome, Safari, Opera */
+    -webkit-animation: myfirst 2s;
+    /* Chrome, Safari, Opera */
     animation: myfirst 5s;
     position: fixed;
-    left:0px; top:0px;
-    height:100%;
+    left: 0px;
+    top: 0px;
+    height: 100%;
     width: 100%;
     background: yellow;
 }
-
 /* Chrome, Safari, Opera */
+
 @-webkit-keyframes myfirst {
     from {
         background: red;
         width: 100%;
-        left:100px; top:100px;
+        left: 100px;
+        top: 100px;
     }
     to {
         background: yellow;
         width: 200%;
-        left:0px; top:0px;
-
+        left: 0px;
+        top: 0px;
     }
 }
 /* Standard syntax */
+
 @keyframes myfirst {
     from {
         background: red;
@@ -283,7 +284,6 @@ material-button.material-button-fab,
         width: 200%;
     }
 }
-
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
     .marketing,
@@ -301,4 +301,34 @@ material-button.material-button-fab,
     color: white;
     background: rgba(39, 174, 96, 0.6);
     margin-bottom: 10px;
+}
+.document {
+    float: left;
+    width: 100%;
+}
+.document h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.document i {
+    margin-top: 7px;
+}
+.lessmaterialpadding {
+    padding: 10px 0;
+}
+.invoiceItem {
+    float: left;
+    width: 100%;
+}
+.items {
+    display: none;
+}
+hr {
+    width: 100%;
+    color: black;
+    float: left;
+    margin: 7px 0;
+}
+.buttons i {
+    padding: 0 5px;
 }
