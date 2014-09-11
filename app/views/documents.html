@@ -1,7 +1,13 @@
-<div>
+<material-tabs selected="selectedIndex">
+    <material-tab ng-repeat="tab in tabs">
+        {{tab.title}}
+    </material-tab>
+</material-tabs>
 
-    <div class="table">
 
+<div class="animate-switch-container clientsContent" ng-switch on="selectedIndex">
+
+    <div ng-switch-when="0" class="table hideScroll fullHeight">
         <material-whiteframe class="lessmaterialpadding col-xs-12" ng-repeat="invoice in invoices">
             <div ng-click="toggleInvoice($event)" class="document pointer material-whiteframe-z1">
                 <i class="fa fa-plus col-xs-1"></i>
@@ -9,10 +15,9 @@
                 <h3 class="col-xs-4">{{invoice.client.name}}</h3>
                 <h3 class="col-xs-2">{{invoice.invoiceDate}}</h3>
                 <div class="buttons col-xs-2">
-                    <i class="fa fa-pencil"></i>
-                    <i class="fa fa-trash"></i>
+                    <i ng-click="editInvoice(invoice.id)" class="fa fa-pencil"></i>
+                    <i ng-click="deleteInvoice(invoice.id)" class="fa fa-trash"></i>
                 </div>
-
                 <div class="items">
                     <hr>
                     <div class="invoiceItem" ng-repeat="ic in invoice.invoiceContent">
@@ -38,5 +43,32 @@
 
     </div>
 
+    <div ng-switch-when="1" class="table hideScroll fullHeight">
+
+        <material-whiteframe class="lessmaterialpadding col-xs-12">
+            <div class="input-group">
+
+                <input type="text" ng-model="formdata.name" class="form-control" placeholder="Name">
+                <input type="text" ng-model="formdata.firstname" class="form-control" placeholder="Vorname">
+                <hr>
+                <div ng-repeat="item in formdata.invoiceContent">
+
+                    <input type="text" ng-model="item.itemName" class="form-control" placeholder="Vorname">
+                    <input type="text" ng-model="item.itemDescription" class="form-control" placeholder="Vorname">
+                    <input type="text" ng-model="item.itemUnitcosts" class="form-control" placeholder="Vorname">
+                    <input type="text" ng-model="item.itemQuantity" class="form-control" placeholder="Vorname">
+
+                </div>
+                <button ng-click="addItem()">gth</button>
+                <hr>
+
+                <div class="float-width">
+                    <button ng-click="saveInvoice()">abfeuern</button>
+                </div>
+            </div>
+        </material-whiteframe>
+
+    </div>
 </div>
+
 
