@@ -17,7 +17,6 @@ angular.module('invoicePocApp')
             if (!err) {
                 try {
                     configObj = JSON.parse(content);
-                    console.log(configObj);
                     $scope.config = configObj;
                     $scope.$apply();
                 } catch (e) {
@@ -26,5 +25,4 @@ angular.module('invoicePocApp')
 
             }
         });
-        console.log(utils);
     });
