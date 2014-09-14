@@ -72,7 +72,6 @@ angular.module('invoicePocApp')
         };
 
         $scope.removeInvoiceItem = function (index) {
-            //debugger;
             $scope.formdata.invoiceContent.splice(index, 1);
             $scope.$apply();
         };
