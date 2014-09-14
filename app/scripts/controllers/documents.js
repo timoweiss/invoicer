@@ -8,9 +8,10 @@
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('DocumentsCtrl', function ($scope, $rootScope, InvoiceService, ClientsService) {
+    .controller('DocumentsCtrl', function ($scope, $rootScope, $state, InvoiceService, ClientsService) {
         $rootScope.headerTitle = 'Dokumente';
         $scope.invoices = [];
+        $scope.formdata = {};
 
         $scope.toggleInvoice = function ($event) {
             var el = $event.currentTarget;
@@ -27,8 +28,11 @@ angular.module('invoicePocApp')
 
         $scope.selectedIndex = 0;
 
+        ClientsService.getClients().then(function (response) {
+            $scope.clients = response.data;
+        });
+
         $scope.editInvoice = function (id) {
-            debugger;
             angular.forEach($scope.invoices, function (value, key) {
                 if (value.id === id) {
                     $scope.formdata = value;
@@ -38,6 +42,10 @@ angular.module('invoicePocApp')
         };
 
         $scope.addItem = function () {
+
+            $scope.formdata.invoiceContent = $scope.formdata.invoiceContent || [];
+
+
             $scope.formdata.invoiceContent.push({
                 itemName: '',
                 itemDescription: '',

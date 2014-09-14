@@ -88,7 +88,7 @@ body {
     font-size: 40px;
 }
 material-whiteframe {
-    background: rgba(255,255,255,.8);
+    background: rgba(255, 255, 255, .8);
     margin: 20px;
     padding: 20px;
     float: left;
@@ -121,11 +121,11 @@ material-whiteframe {
     background: none;
 }
 material-whiteframe .pointer {
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     padding: 15px;
 }
 material-whiteframe:hover .pointer {
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
     padding: 15px;
 }
 .hideScroll {
@@ -249,7 +249,6 @@ material-button.material-button-fab,
     testing for config
  */
 
-
 @media screen and (min-width: 768px) {
     /* Remove the padding we set earlier */
     .marketing,
@@ -297,4 +296,22 @@ hr {
 }
 .buttons i {
     padding: 0 5px;
+}
+.grey {
+    background: rgb(248, 248, 248);
+}
+.horizontalPadding {
+    padding: 0 15px;
+}
+.grey input,
+.grey input:focus {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: none;
+}
+.client-list {
+    position: absolute;
 }
