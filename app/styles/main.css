@@ -315,3 +315,41 @@ hr {
 .client-list {
     position: absolute;
 }
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+.border-right {
+    border-right: 1px solid #e5e5e5;
+}
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+.border-left {
+    border-left: 1px solid #e5e5e5;
+}
+.box-container {
+    background: white;
+    float: left;
+    width: 100%;
+}
+.box-container:last-child {
+    margin-bottom: 0;
+}
+.invoice-item-height {
+    height: 90px;
+}
+.invoice-item-height div {
+    height: 100%;
+    padding: 10px;
+}
+.box-container .nocaption {
+    padding-top: 38px;
+}
+.box-container:first-child {
+    border-top: 1px solid #e5e5e5;
+    ;
+}
+.box-container {
+    border-bottom: 1px solid #e5e5e5;
+    ;
+}

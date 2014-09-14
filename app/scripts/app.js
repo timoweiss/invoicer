@@ -29,7 +29,7 @@ angular
                 controller: 'MainCtrl'
             })
             .state('documents', {
-                url: '/documents/:documentId/:clientId',
+                url: '/documents',
                 templateUrl: 'views/documents.html',
                 controller: 'DocumentsCtrl'
             })
