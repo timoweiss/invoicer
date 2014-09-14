@@ -351,5 +351,8 @@ hr {
 }
 .box-container {
     border-bottom: 1px solid #e5e5e5;
-    ;
+}
+.noheight {
+    height: 0px;
+    overflow: hidden;
 }

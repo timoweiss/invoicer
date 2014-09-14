@@ -42,10 +42,7 @@ angular.module('invoicePocApp')
         };
 
         $scope.addItem = function () {
-
             $scope.formdata.invoiceContent = $scope.formdata.invoiceContent || [];
-
-
             $scope.formdata.invoiceContent.push({
                 itemName: '',
                 itemDescription: '',
@@ -55,13 +52,11 @@ angular.module('invoicePocApp')
         };
 
         $scope.saveInvoice = function () {
-
             InvoiceService.saveInvoice($scope.formdata).then(function () {
                 $scope.formdata = {};
                 $scope.selectedIndex = 0;
                 $scope.tabs[1].title = 'Rechnung anlegen';
             });
-
 
         };
 
