@@ -19,6 +19,13 @@ angular.module('invoicePocApp')
             $scope.config = data;
             $scope.$apply();
         });
+
+        $scope.saveConfig = function() {
+            global.config($scope.config).then(function() {
+                debugger;
+            });
+        };
+
         $scope.tabs = [{
             title: 'Profil',
             active: true
