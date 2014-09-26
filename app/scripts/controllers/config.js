@@ -10,19 +10,25 @@ var utils = require('./helper');
  * Controller of the invoicePocApp
  */
 angular.module('invoicePocApp')
-    .controller('ConfigCtrl', function($scope, $rootScope, $state, ConfigService) {
+    .controller('ConfigCtrl', function($scope, $rootScope) {
         $rootScope.headerTitle = 'Einstellungen';
         var configObj = {};
-        ConfigService.getConfig(null, function(err, content) {
-            if (!err) {
-                try {
-                    configObj = JSON.parse(content);
-                    $scope.config = configObj;
-                    $scope.$apply();
-                } catch (e) {
-                    window.alert(e);
-                }
 
-            }
+        global.config().then(function(data) {
+            console.log(data);
+            $scope.config = data;
+            $scope.$apply();
         });
+        $scope.tabs = [{
+            title: 'Profil',
+            active: true
+        }, {
+            title: 'Einstellungen',
+            active: false
+        }, {
+            title: 'Benachrichtungen',
+            active: false
+        }];
+
+        $scope.selectedIndex = 0;
     });
