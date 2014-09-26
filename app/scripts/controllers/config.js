@@ -22,7 +22,7 @@ angular.module('invoicePocApp')
 
         $scope.saveConfig = function() {
             global.config($scope.config).then(function() {
-                debugger;
+                global.configData = $scope.config;
             });
         };
 
