@@ -95,6 +95,6 @@ angular
         });
 
     })
-    .config(function(shortcutProvider) {
-        var shortcut = shortcutProvider.$get();
+    .config(function(eventProvider) {
+        var shortcut = eventProvider.$get();
     });
