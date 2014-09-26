@@ -54,14 +54,16 @@ angular
             });
     })
     .config(function(configProvider) {
-        var config = configProvider.$get();
-        config('test', '{data:data}').then(function() {
-            debugger;
+        global.config = configProvider.$get();
+        global.config({
+            data: 'data'
+        }).then(function() {
+            console.log('success');
         });
-        // config.getConfig(confDir, function() {
-        //     console.log(arguments);
-        // });
-        // console.log(confDir);
+
+        global.config().then(function(data) {
+            console.log(data);
+        });
     })
     .config(function(shortcutProvider) {
         var shortcut = shortcutProvider.$get();
