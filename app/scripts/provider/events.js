@@ -13,8 +13,22 @@ angular.module('invoicePocApp')
             if (location) {
                 location.reload();
             }
-
         });
+
+        var win = global.app.gui.Window.get();
+        win.on('close', function() {
+            saveConfig().then(function() {
+                console.log('successfully saved');
+                win.close(true);
+            }).fail(function(err) {
+                console.log(err);
+            });
+        });
+
+        function saveConfig() {
+            global.configData.hiddenPreferences.windowSize = [win.width, win.height];
+            return global.config(global.configData);
+        }
 
     };
 
