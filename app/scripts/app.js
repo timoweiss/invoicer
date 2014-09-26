@@ -84,15 +84,12 @@ angular
 
         global.config = configProvider.$get();
         global.config().then(function(data) {
-            console.log('#1 getter', global.noConfig);
             global.noConfig = true;
             global.configData = data;
         }).fail(function(err) {
-            console.log('#1 getter error', global.noConfig);
             if (err.errno === -2) {
                 global.config(_configMock).then(function() {
-                    debugger;
-                    global.noConfig = true;
+                    global.noConfig = false;
                 });
             }
         });
@@ -100,10 +97,4 @@ angular
     })
     .config(function(shortcutProvider) {
         var shortcut = shortcutProvider.$get();
-    })
-    .run(function($state) {
-        console.log('#2 run', global.noConfig);
-        if (!global.noConfig) {
-            $state.go('clients');
-        }
     });
