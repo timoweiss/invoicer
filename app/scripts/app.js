@@ -99,4 +99,14 @@ angular
     })
     .config(function(eventProvider) {
         var shortcut = eventProvider.$get();
+    })
+    .config(function($translateProvider) {
+
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'i18n/',
+            suffix: '.json'
+        });
+        var language = window.navigator.userLanguage || window.navigator.language;
+        language = language.substr(0, 2);
+        $translateProvider.preferredLanguage(language);
     });
