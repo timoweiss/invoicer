@@ -11,5 +11,10 @@ angular.module('invoicePocApp')
     this.$get = function() {
         return conf;
     };
+    this.resizeWindow = function() {
+        var win = global.app.gui.Window.get();
+        var winSize = global.configData.hiddenPreferences.windowSize;
+        win.resizeTo(winSize[0], winSize[1]);
+    };
 
 });

@@ -86,6 +86,7 @@ angular
         global.config().then(function(data) {
             global.noConfig = true;
             global.configData = data;
+            configProvider.resizeWindow();
         }).fail(function(err) {
             if (err.errno === -2) {
                 global.config(_configMock).then(function() {
