@@ -23,6 +23,9 @@ angular.module('invoicePocApp')
         $scope.saveConfig = function() {
             global.config($scope.config).then(function() {
                 global.configData = $scope.config;
+                var prof = global.configData.profile;
+                $rootScope.userName = prof.firstname + ' ' + prof.surname;
+                $rootScope.$apply();
             });
         };
 
