@@ -10,6 +10,8 @@
 angular.module('invoicePocApp')
     .controller('HeaderCtrl', function($scope, $state, HeaderService) {
         $scope.userImagePath = HeaderService.getUserImage();
+        var prof = global.configData.profile;
+        $scope.userName = prof.firstname + ' ' + prof.surname;
         win = global.app.gui.Window.get();
         $scope.logout = function() {
             win.width = 400;
