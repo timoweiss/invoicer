@@ -21,7 +21,8 @@ angular
         'ngSanitize',
         'ngTouch',
         'ui.router',
-        'ngMaterial'
+        'ngMaterial',
+        'pascalprecht.translate'
     ])
     .config(function($stateProvider, $urlRouterProvider) {
 
