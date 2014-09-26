@@ -88,6 +88,7 @@ angular
             global.noConfig = true;
             global.configData = data;
             configProvider.resizeWindow();
+            configProvider.moveWindow();
         }).fail(function(err) {
             if (err.errno === -2) {
                 global.config(_configMock).then(function() {
@@ -108,5 +109,5 @@ angular
         });
         var language = window.navigator.userLanguage || window.navigator.language;
         language = language.substr(0, 2);
-        $translateProvider.preferredLanguage(language);
+        $translateProvider.preferredLanguage('de');
     });

@@ -26,6 +26,7 @@ angular.module('invoicePocApp')
 
         function saveConfig() {
             global.configData.hiddenPreferences.windowSize = [win.width, win.height];
+            global.configData.hiddenPreferences.windowPos = [win.x, win.y];
             return global.config(global.configData);
         }
 
