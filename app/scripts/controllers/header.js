@@ -10,8 +10,6 @@
 angular.module('invoicePocApp')
     .controller('HeaderCtrl', function($scope, $state, HeaderService) {
         $scope.userImagePath = HeaderService.getUserImage();
-        console.log(HeaderService.getUserImage());
-        console.log(require('nw.gui'));
         win = require('nw.gui').Window.get();
         $scope.logout = function() {
             win.width = 400;
