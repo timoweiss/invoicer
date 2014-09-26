@@ -9,7 +9,6 @@ angular.module('invoicePocApp')
         });
 
         Mousetrap.bind('command+r', function() {
-            console.info('yo');
             if (location) {
                 location.reload();
             }
